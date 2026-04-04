@@ -84,7 +84,7 @@ export default function Footer() {
               x.com/SmartHiveLabs
             </Link>
             <Link
-              href="https://www.tiktok.com/@smarthivelabs"
+              href="https://www.tiktok.com/@smarthivelab"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-white/62 transition-colors hover:text-white"
