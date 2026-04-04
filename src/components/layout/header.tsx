@@ -31,7 +31,7 @@ export default function Header() {
             <p className="text-sm font-semibold tracking-[0.16em] text-white/60">
               SMART HIVE LABS
             </p>
-            <p className="text-sm text-white/90">Developer Studio</p>
+            <p className="text-sm text-white/90">Software, AI and Game Development</p>
           </div>
         </Link>
 

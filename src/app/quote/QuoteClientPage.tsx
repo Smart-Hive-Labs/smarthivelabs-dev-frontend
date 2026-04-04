@@ -90,7 +90,7 @@ export default function QuoteClientPage() {
             A dedicated build request flow for businesses.
           </h1>
           <p className="mt-5 text-base leading-8 text-white/62">
-            This page replaces the old generic hire-us surface with a more structured quote funnel. Share the type of build, budget direction, timeline, and technical context so the studio can respond with a stronger first conversation.
+            Share the type of build, budget direction, timeline, and technical context so Smart Hive Labs can respond with a useful next step and a clearer project conversation.
           </p>
 
           <div className="mt-10 grid gap-4">

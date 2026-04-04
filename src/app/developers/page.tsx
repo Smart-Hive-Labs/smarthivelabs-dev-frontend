@@ -14,8 +14,8 @@ export default function DevelopersPage() {
     <div className="section-wrap py-20 md:py-24">
       <SectionHeading
         eyebrow="Developers"
-        title="A team page reworked into a developer-facing studio profile."
-        description="The old broad company-about surface is now focused on the people, specialties, and operating principles behind the development work."
+        title="The people and disciplines behind Smart Hive Labs."
+        description="Meet the engineering focus areas, product thinking, and delivery principles that shape the company’s software work."
       />
 
       <div className="mt-14 grid gap-5 lg:grid-cols-3">
@@ -49,8 +49,8 @@ export default function DevelopersPage() {
       <div className="mt-16 surface-panel rounded-[2rem] p-8 md:p-10">
         <SectionHeading
           eyebrow="How We Work"
-          title="The studio is positioned around engineering clarity, not vague agency claims."
-          description="These principles guide the redesign and how the developer-facing frontend now introduces Smart Hive Labs."
+          title="A working model built on clarity, ownership, and delivery."
+          description="These principles guide how Smart Hive Labs scopes work, builds products, and supports clients."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {studioPrinciples.map((principle) => (

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Github } from "lucide-react";
+import { GithubOrganizationPanel } from "@/components/studio/github-organization-panel";
 import { SectionHeading } from "@/components/studio/section-heading";
 import { openSourceEntries } from "@/data/siteContent";
 
@@ -16,7 +17,7 @@ export default function OpenSourcePage() {
       <SectionHeading
         eyebrow="Open Source"
         title="Maintained public work that reflects how the studio thinks and builds."
-        description="Open source stays visible in the new frontend as a signal of technical depth, experimentation, and contribution."
+        description="Selected repositories are open for contribution, while the broader GitHub organization also includes public product and research work."
       />
       <div className="mt-14 grid gap-5 lg:grid-cols-2">
         {openSourceEntries.map((entry) => (
@@ -60,6 +61,9 @@ export default function OpenSourcePage() {
             </div>
           </article>
         ))}
+      </div>
+      <div className="mt-16">
+        <GithubOrganizationPanel />
       </div>
     </div>
   );

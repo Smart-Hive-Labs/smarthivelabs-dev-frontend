@@ -52,13 +52,13 @@ export default function Footer() {
               support@smarthivelabs.dev
             </a>
             <Link
-              href="https://github.com/smarthivelabs"
+              href="https://github.com/Smart-Hive-Labs"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-white/62 transition-colors hover:text-white"
             >
               <Github className="h-4 w-4" />
-              github.com/smarthivelabs
+              github.com/Smart-Hive-Labs
             </Link>
             <Link
               href="/quote"
@@ -73,8 +73,8 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 text-sm text-white/45 md:flex-row md:items-center md:justify-between md:px-8">
-          <p>© 2026 Smart Hive Labs. Developer studio frontend.</p>
-          <p>Focused on software delivery, product systems, and game development.</p>
+          <p>© 2026 Smart Hive Labs. All rights reserved.</p>
+          <p>Software delivery, product systems, public projects, and game development.</p>
         </div>
       </div>
     </footer>

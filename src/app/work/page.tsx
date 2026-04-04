@@ -16,7 +16,7 @@ export default function WorkPage() {
       <SectionHeading
         eyebrow="Work"
         title="Curated case studies instead of a generic portfolio dump."
-        description="This page shows selected internal products, prototypes, and client-facing build summaries with controlled public detail."
+        description="Selected client work, internal products, and active initiatives presented with the right level of public detail."
       />
 
       <div className="mt-14 grid gap-5">

@@ -26,7 +26,7 @@ export default function ServicesPage() {
       <SectionHeading
         eyebrow="Services"
         title="Software and game development services structured around real delivery."
-        description="The services page now focuses entirely on engineering-facing offers: product builds, applications, AI workflows, game development, support, and advisory."
+        description="From product engineering to AI systems and game development, Smart Hive Labs delivers technical work with clear commercial intent."
       />
 
       <div className="mt-14 grid gap-12">

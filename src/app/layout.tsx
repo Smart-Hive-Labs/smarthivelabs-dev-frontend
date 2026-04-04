@@ -9,11 +9,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Smart Hive Labs Developer Studio",
+    default: "Smart Hive Labs | Software and Game Development",
     template: "%s | Smart Hive Labs",
   },
   description:
-    "Smart Hive Labs is a developer-focused studio for software products, web and mobile apps, AI-enabled systems, and game development.",
+    "Smart Hive Labs builds software products, web and mobile apps, AI-enabled systems, and game development projects for businesses and partners.",
   keywords: [
     "Smart Hive Labs",
     "Software Development",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "AI Systems",
     "Game Development",
     "Product Engineering",
-    "Developer Studio",
+    "Software Engineering Partner",
   ],
   authors: [{ name: "Smart Hive Labs", url: "https://smarthivelabs.dev" }],
   creator: "Smart Hive Labs",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Smart Hive Labs Developer Studio",
+    title: "Smart Hive Labs | Software and Game Development",
     description:
-      "Developer-facing studio frontend for software products, custom builds, AI-enabled tools, and game development.",
+      "Software, AI, mobile, web, and game development services from Smart Hive Labs.",
     url: "https://smarthivelabs.dev",
     siteName: "Smart Hive Labs",
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smart Hive Labs Developer Studio",
+    title: "Smart Hive Labs | Software and Game Development",
     description:
       "Software and game development partner for product builds, AI-enabled systems, and curated project work.",
     images: ["/shl_logo.webp"],

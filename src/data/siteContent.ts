@@ -73,10 +73,17 @@ export interface OpenSourceEntry {
   issuesUrl?: string;
 }
 
+export interface CareerTrack {
+  title: string;
+  audience: string;
+  summary: string;
+  highlights: string[];
+}
+
 export const studioStats = [
-  { label: "Studio focus", value: "Software and game development" },
-  { label: "Delivery model", value: "Curated builds for businesses" },
-  { label: "Operating style", value: "Design-led engineering" },
+  { label: "Core focus", value: "Software, AI, and game development" },
+  { label: "Engagement model", value: "Custom product and project delivery" },
+  { label: "Working style", value: "Product-led engineering with clear execution" },
 ];
 
 export const serviceOffers: ServiceOffer[] = [
@@ -208,9 +215,6 @@ export const caseStudies: CaseStudy[] = [
       { label: "Focus", value: "AI learning workflows" },
       { label: "Build type", value: "Internal product" },
     ],
-    links: [
-      { href: "https://github.com/smarthivelabs/hivedemia", label: "Repository" },
-    ],
   },
   {
     slug: "enterprise-ops-suite",
@@ -250,7 +254,7 @@ export const caseStudies: CaseStudy[] = [
       "Research-led feature framing",
     ],
     tags: ["Civic Tech", "Prototype", "Research"],
-    links: [{ href: "https://github.com/smarthivelabs/civiclink", label: "Repository" }],
+    links: [{ href: "https://github.com/Smart-Hive-Labs/civiclink", label: "Repository" }],
   },
   {
     slug: "learning-game-lab",
@@ -275,26 +279,31 @@ export const caseStudies: CaseStudy[] = [
 export const developerProfiles: DeveloperProfile[] = [
   {
     name: "Mensah Isaac Nana Sam",
-    role: "Founder and Product Engineer",
+    role: "Founder, Owner and General Manager",
     discipline: "Product direction, frontend systems, AI product thinking",
-    bio: "Leads Smart Hive Labs across product direction, interface quality, and technical execution with a focus on high-leverage software systems.",
-    specialties: ["React", "Next.js", "Product strategy", "AI-enabled products"],
+    bio: "Mensah Isaac Nana Sam is the sole founder and owner of Smart Hive Labs, leading product direction, delivery decisions, frontend systems, business management, and the overall direction of the company.",
+    specialties: [
+      "Product direction",
+      "Frontend systems",
+      "AI product thinking",
+      "Company leadership",
+    ],
     image: "/mins.jpg",
   },
   {
-    name: "Frontend Systems Team",
-    role: "Frontend Engineering",
-    discipline: "Product interfaces and application architecture",
-    bio: "Designs and ships responsive application interfaces with a focus on clarity, performance, and product-grade interaction design.",
-    specialties: ["Design systems", "TypeScript", "Responsive UI", "Frontend architecture"],
+    name: "Engineering Team",
+    role: "Delivery and Implementation",
+    discipline: "Product delivery across frontend, backend, and supporting execution",
+    bio: "Smart Hive Labs works with a supporting team of employees across implementation and delivery. Individual team profiles will be published later as the company updates this frontend.",
+    specialties: ["Frontend delivery", "Backend support", "Product execution", "Team operations"],
     image: "/team.jpg",
   },
   {
-    name: "Platform and AI Team",
-    role: "Backend and Applied AI",
-    discipline: "Platform services, APIs, and automation workflows",
-    bio: "Builds the underlying systems that power integrations, data flow, automation, and AI-supported product experiences.",
-    specialties: ["Node.js", "Python", "APIs", "Workflow automation"],
+    name: "Operations and Support Team",
+    role: "Studio Support",
+    discipline: "Execution support, coordination, and project assistance",
+    bio: "Additional team capacity supports operations, coordination, and delivery across active projects while core leadership and direction remain under the founder.",
+    specialties: ["Project support", "Coordination", "Execution assistance", "Studio operations"],
     image: "/office-environment.webp",
   },
 ];
@@ -345,30 +354,21 @@ export const vacancies: Vacancy[] = [
 
 export const openSourceEntries: OpenSourceEntry[] = [
   {
-    title: "Hivedemia",
-    summary: "AI-assisted education product work built in public where possible.",
-    focus: "Learning workflows and intelligent assistance",
-    stack: ["Next.js", "Python", "AI tooling"],
-    repository: "https://github.com/smarthivelabs/hivedemia",
-    contributionUrl: "https://github.com/smarthivelabs/hivedemia",
-    issuesUrl: "https://github.com/smarthivelabs/hivedemia/issues",
-  },
-  {
     title: "CivicLink",
-    summary: "A civic-tech exploration around public access to clearer digital information and participation tools.",
+    summary: "A civic-tech initiative focused on public access to clearer information, participation tools, and digital transparency.",
     focus: "Research-led civic software",
     stack: ["Next.js", "Node.js", "Prototype systems"],
-    repository: "https://github.com/smarthivelabs/civiclink",
-    contributionUrl: "https://github.com/smarthivelabs/civiclink",
-    issuesUrl: "https://github.com/smarthivelabs/civiclink/issues",
+    repository: "https://github.com/Smart-Hive-Labs/civiclink",
+    contributionUrl: "https://github.com/Smart-Hive-Labs/civiclink",
+    issuesUrl: "https://github.com/Smart-Hive-Labs/civiclink/issues",
   },
 ];
 
 export const studioPrinciples = [
-  "Software-first positioning with clear business value",
-  "Premium interfaces paired with practical engineering",
-  "Curated public work instead of noisy portfolio volume",
-  "Reusable systems that support shipping and iteration",
+  "Business problems translated into software that teams can operate",
+  "Premium interfaces backed by practical engineering decisions",
+  "Selective project visibility with clear positioning and trust",
+  "Reusable systems that support shipping, maintenance, and growth",
 ];
 
 export const buildProcess = [
@@ -392,4 +392,58 @@ export const buildProcess = [
     title: "Launch and Support",
     description: "Prepare for release, refine the product, and continue delivery where needed.",
   },
+];
+
+export const careerTracks: CareerTrack[] = [
+  {
+    title: "Internship Program",
+    audience: "Students and early builders",
+    summary: "Hands-on learning tracks for people building strength in frontend, backend, AI, product systems, and technical execution.",
+    highlights: [
+      "Mentored project work",
+      "Portfolio-building delivery",
+      "Frontend, backend, AI, and product exposure",
+    ],
+  },
+  {
+    title: "Entry-Level Roles",
+    audience: "Junior talent",
+    summary: "Structured opportunities for emerging engineers who can contribute to production work and grow with active builds.",
+    highlights: [
+      "Junior frontend and backend paths",
+      "Applied engineering on real products",
+      "Growth through active delivery work",
+    ],
+  },
+  {
+    title: "NSS / Attachment",
+    audience: "Placement candidates",
+    summary: "Practical placements for candidates who want real software and product delivery experience inside a focused engineering environment.",
+    highlights: [
+      "Meaningful technical contribution",
+      "Exposure to live products and internal systems",
+      "Structured support and direction",
+    ],
+  },
+  {
+    title: "General Applications",
+    audience: "Future hires and collaborators",
+    summary: "If your profile fits the way Smart Hive Labs builds, you can still register interest even when a direct vacancy is not open.",
+    highlights: [
+      "Talent pool for future projects",
+      "Specialist and project-based interest",
+      "Flexible route for strong candidates",
+    ],
+  },
+];
+
+export const careerApplicationRoles = [
+  "Frontend Engineer",
+  "Backend Engineer",
+  "Gameplay Developer",
+  "Frontend Internship",
+  "Backend Internship",
+  "AI / Automation Internship",
+  "NSS / Attachment",
+  "General Application",
 ];

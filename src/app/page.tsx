@@ -24,7 +24,7 @@ export default function HomePage() {
             <div className="max-w-4xl space-y-8">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/62">
                 <Sparkles className="h-3.5 w-3.5" />
-                Developer Studio Frontend
+                Software, AI and Game Development
               </div>
               <div className="space-y-6">
                 <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.06em] text-white md:text-7xl">
@@ -91,7 +91,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Capabilities"
           title="A software-focused service stack with product discipline built in."
-          description="The site now positions Smart Hive Labs around business-facing software delivery, AI-enabled systems, and game development rather than broad agency categories."
+          description="Smart Hive Labs helps businesses plan, build, launch, and improve software products, operational tools, and interactive experiences."
         />
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
           {featuredServices.map((service) => (
@@ -124,7 +124,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Selected Work"
           title="Curated work, internal products, and active exploration."
-          description="The public work surface is intentionally selective. It shows what Smart Hive Labs builds without turning the site into a noisy portfolio index."
+          description="A selective look at product builds, client delivery, and internal initiatives across software, AI, and interactive systems."
         />
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {featuredProjects.map((project) => (
@@ -167,7 +167,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Process"
             title="A tighter path from enquiry to build."
-            description="The redesign frames Smart Hive Labs like a disciplined studio: discovery, system design, production, and launch support."
+            description="Every engagement is shaped around discovery, technical planning, production delivery, and post-launch continuity."
           />
           <div className="grid gap-4">
             {buildProcess.map((phase) => (
@@ -193,7 +193,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Developers"
               title="Meet the people and disciplines behind the work."
-              description="The team surface is now framed around engineering specialties, product thinking, and how Smart Hive Labs approaches technical delivery."
+              description="Meet the engineering focus areas behind Smart Hive Labs and the disciplines that support delivery across products and platforms."
             />
             <div className="mt-10 grid gap-4">
               {developerProfiles.map((developer) => (
@@ -241,10 +241,10 @@ export default function HomePage() {
                 Project Enquiries
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-white md:text-5xl">
-                Use the new quote flow for builds. Use contact for everything else.
+                Start with a quote for project work, or contact the team for general enquiries.
               </h2>
               <p className="mt-4 text-base leading-7 text-white/60">
-                The redesign separates project build requests from general enquiries so businesses can submit clearer project information and the studio can respond with better scope alignment.
+                Project build requests and general enquiries are handled separately so each conversation starts with the right level of detail.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
