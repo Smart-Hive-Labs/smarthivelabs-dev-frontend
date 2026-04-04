@@ -1,143 +1,120 @@
 @import "tailwindcss";
 
 :root {
-  /* Light Theme Color System - Optimized for Business */
-  --background: #ffffff;
-  --foreground: #1f2937;
-
-  /* Card System */
-  --card: #ffffff;
-  --card-foreground: #1f2937;
-
-  /* Popover System */
-  --popover: #ffffff;
-  --popover-foreground: #1f2937;
-
-  /* Primary Brand Colors */
-  --primary: #006fd2; /* Your brand blue */
-  --primary-foreground: #ffffff;
-
-  /* Secondary Colors */
-  --secondary: #f8fafc; /* Slate-50 */
-  --secondary-foreground: #334155; /* Slate-700 */
-
-  /* Muted Colors for Subtle Text */
-  --muted: #f1f5f9; /* Slate-100 */
-  --muted-foreground: #64748b; /* Slate-500 */
-
-  /* Accent Colors */
-  --accent: #f1f5f9; /* Slate-100 */
-  --accent-foreground: #334155; /* Slate-700 */
-
-  /* Status Colors */
-  --destructive: #ef4444; /* Red-500 */
+  --background: #07111f;
+  --foreground: #f4f7fb;
+  --surface: #0b1020;
+  --surface-elevated: #10172b;
+  --surface-soft: rgba(255, 255, 255, 0.05);
+  --card: #0f1729;
+  --card-foreground: #f4f7fb;
+  --popover: #10172b;
+  --popover-foreground: #f4f7fb;
+  --primary: #eef2ff;
+  --primary-foreground: #0b1020;
+  --secondary: #11192d;
+  --secondary-foreground: #cfd7e8;
+  --muted: #0d1526;
+  --muted-foreground: #98a5bd;
+  --accent: #182133;
+  --accent-foreground: #f4f7fb;
+  --destructive: #ff6b6b;
   --destructive-foreground: #ffffff;
-
-  /* Border and Input System */
-  --border: #e2e8f0; /* Slate-200 */
-  --input: #e2e8f0; /* Slate-200 */
-  --ring: #006fd2; /* Primary blue for focus rings */
-
-  /* Chart Colors for Data Visualization */
-  --chart-1: #3b82f6; /* Blue-500 */
-  --chart-2: #10b981; /* Emerald-500 */
-  --chart-3: #f59e0b; /* Amber-500 */
-  --chart-4: #8b5cf6; /* Violet-500 */
-  --chart-5: #ef4444; /* Red-500 */
-
-  /* Sidebar System */
-  --sidebar-background: #ffffff;
-  --sidebar-foreground: #334155; /* Slate-700 */
-  --sidebar-primary: #006fd2;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f8fafc; /* Slate-50 */
-  --sidebar-accent-foreground: #334155; /* Slate-700 */
-  --sidebar-border: #e2e8f0; /* Slate-200 */
-  --sidebar-ring: #006fd2;
-
-  /* Border Radius */
-  --radius: 0.5rem;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: rgba(255, 255, 255, 0.2);
+  --radius: 1.25rem;
 }
 
-/* Professional Light Theme - No Dark Mode Support */
-/* This ensures consistent light theme across all devices and preferences */
-
-/* Custom utility class */
-.text-balance {
-  text-wrap: balance;
-}
-
-/* Global styles */
 * {
-  border-color: hsl(var(--border));
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--background);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(92, 120, 255, 0.14), transparent 24%),
+    radial-gradient(circle at 80% 10%, rgba(129, 205, 255, 0.12), transparent 22%),
+    linear-gradient(180deg, #09111f 0%, #07111f 100%);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
+  font-family:
+    "SF Pro Display",
+    "SF Pro Text",
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Professional enhancements for better UX */
-.container {
-  max-width: 1200px;
-}
-
-/* Smooth transitions for interactive elements */
-button,
 a,
-.card {
-  transition: all 0.2s ease-in-out;
+button {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
 }
 
-/* Focus styles for accessibility */
-:focus {
+:focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
 
-/* Custom scrollbar for webkit browsers */
+::selection {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.surface-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 22px 80px rgba(2, 6, 23, 0.28);
+}
+
+.section-wrap {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .section-wrap {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.text-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #b6c2d9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--muted);
+  background: #09111f;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted-foreground);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}
-
-/* Custom animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* Print styles */
-@media print {
-  * {
-    background: white !important;
-    color: black !important;
-  }
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
 }
