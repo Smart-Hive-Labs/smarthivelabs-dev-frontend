@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Mail, ArrowUpRight } from "lucide-react";
+import { Github, Mail, ArrowUpRight, Instagram, Linkedin } from "lucide-react";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
@@ -71,6 +71,46 @@ export default function Footer() {
             >
               <Github className="h-4 w-4" />
               github.com/Smart-Hive-Labs
+            </Link>
+            <Link
+              href="https://x.com/SmartHiveLabs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-white/62 transition-colors hover:text-white"
+            >
+              <span className="inline-flex h-4 w-4 items-center justify-center text-[11px] font-semibold">
+                X
+              </span>
+              x.com/SmartHiveLabs
+            </Link>
+            <Link
+              href="https://www.tiktok.com/@smarthivelabs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-white/62 transition-colors hover:text-white"
+            >
+              <span className="inline-flex h-4 w-4 items-center justify-center text-[10px] font-semibold">
+                TT
+              </span>
+              tiktok.com/@smarthivelabs
+            </Link>
+            <Link
+              href="https://www.instagram.com/smarthivelabs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-white/62 transition-colors hover:text-white"
+            >
+              <Instagram className="h-4 w-4" />
+              instagram.com/smarthivelabs
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/smart-hive-labs-3998903aa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-white/62 transition-colors hover:text-white"
+            >
+              <Linkedin className="h-4 w-4" />
+              linkedin.com/in/smart-hive-labs-3998903aa
             </Link>
             <Link
               href="/quote"
