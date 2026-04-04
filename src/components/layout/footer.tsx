@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Github, Mail, ArrowUpRight } from "lucide-react";
 
@@ -15,9 +16,20 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-[color:var(--surface)]">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.3fr_1fr] md:px-8">
         <div className="max-w-xl space-y-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/45">
-            Smart Hive Labs
-          </p>
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/20 bg-white p-1.5">
+              <Image
+                src="/smarthivelogo_fav.png"
+                alt="Smart Hive Labs logo"
+                width={28}
+                height={28}
+                className="h-7 w-7 rounded-xl object-contain"
+              />
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/45">
+              Smart Hive Labs
+            </p>
+          </div>
           <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">
             Software and game development for businesses that need a serious build partner.
           </h2>

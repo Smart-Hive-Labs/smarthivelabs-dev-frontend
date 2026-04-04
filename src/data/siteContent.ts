@@ -24,9 +24,21 @@ export interface ProjectMetric {
 export interface CaseStudy {
   slug: string;
   title: string;
-  type: "Client Build" | "Internal Product" | "Open Source" | "Prototype";
+  type:
+    | "Client Build"
+    | "Internal Product"
+    | "Open Source"
+    | "Prototype"
+    | "Platform"
+    | "Management System";
   visibility: "Public" | "Curated";
-  status: "Active Build" | "Shipping" | "Maintained" | "Exploration";
+  status:
+    | "Live"
+    | "Active Build"
+    | "Shipping"
+    | "Maintained"
+    | "Exploration"
+    | "Coming Soon";
   summary: string;
   description: string;
   capabilities: string[];
@@ -196,83 +208,203 @@ export const serviceOffers: ServiceOffer[] = [
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "errands4me",
+    title: "Errands4Me",
+    type: "Platform",
+    visibility: "Public",
+    status: "Live",
+    summary:
+      "A delivery and errands platform where users request errands and carriers complete jobs for payment.",
+    description:
+      "Errands4Me is a multi-layer delivery and errands product that supports standard user-to-carrier errands, delivery-as-a-service operations, and merchant storefront participation inside the broader ecosystem.",
+    capabilities: [
+      "Marketplace product design",
+      "Mobile product delivery",
+      "Operational workflow modelling",
+      "Service platform architecture",
+    ],
+    tags: ["Delivery", "DAAS", "Marketplace", "Mobile Apps"],
+    metrics: [
+      { label: "Apps", value: "Carrier and user mobile apps" },
+      { label: "Model", value: "Errands, delivery, and storefront services" },
+    ],
+  },
+  {
+    slug: "errands4me-console",
+    title: "Errands4Me Console",
+    type: "Management System",
+    visibility: "Public",
+    status: "Live",
+    summary:
+      "A mobile management system built to operate and coordinate the Errands4Me delivery-as-a-service ecosystem.",
+    description:
+      "Errands4Me Console provides the management layer for operational control, service oversight, and administration across the delivery-as-a-service side of the Errands4Me platform.",
+    capabilities: [
+      "Operational tooling",
+      "Admin workflow design",
+      "Platform management systems",
+      "Mobile-first control interfaces",
+    ],
+    tags: ["Operations", "Management", "DAAS", "Mobile System"],
+    metrics: [
+      { label: "Focus", value: "Platform administration" },
+      { label: "Supports", value: "Errands4Me DAAS workflows" },
+    ],
+  },
+  {
+    slug: "yuno",
+    title: "Yuno",
+    type: "Platform",
+    visibility: "Public",
+    status: "Live",
+    summary:
+      "A student community app for school content, class updates, Q&A, and academic planning.",
+    description:
+      "Yuno is a mobile application designed for students to engage with their school communities, publish educational content, follow class updates, ask and answer questions, and stay organized with academic planning tools.",
+    capabilities: [
+      "Community product design",
+      "Mobile app delivery",
+      "Content and interaction systems",
+      "Academic planning workflows",
+    ],
+    tags: ["EdTech", "Student Community", "Mobile App", "Planner"],
+    metrics: [
+      { label: "Audience", value: "Students and school communities" },
+      { label: "Core features", value: "Content, Q&A, updates, planner" },
+    ],
+  },
+  {
     slug: "hivedemia",
     title: "Hivedemia",
     type: "Internal Product",
     visibility: "Public",
     status: "Shipping",
-    summary: "An AI-assisted learning platform designed around study workflows, content interaction, and guided learning support.",
+    summary:
+      "An AI-powered learning platform designed around study workflows, educational assistance, and smart academic tools.",
     description:
-      "Built as an internal product initiative to explore AI-assisted education workflows, learner support, and document-driven study tools.",
+      "Hivedemia is one of Smart Hive Labs' core internal product initiatives, built to support learning, AI-assisted academic interaction, and education-focused workflows through a modern platform experience.",
     capabilities: [
+      "AI product design",
+      "Learning workflows",
+      "Platform architecture",
       "Product strategy",
-      "Full-stack delivery",
-      "AI workflow design",
-      "UX architecture",
     ],
-    tags: ["EdTech", "AI", "Platform", "Internal Product"],
+    tags: ["EdTech", "AI", "Internal Product", "Platform"],
     metrics: [
-      { label: "Focus", value: "AI learning workflows" },
-      { label: "Build type", value: "Internal product" },
+      { label: "Focus", value: "AI-powered education workflows" },
+      { label: "Position", value: "Internal flagship product" },
     ],
   },
   {
-    slug: "enterprise-ops-suite",
-    title: "Enterprise Operations Suite",
-    type: "Client Build",
-    visibility: "Curated",
-    status: "Active Build",
-    summary: "A private operational platform for managing requests, approvals, reporting, and internal workflows.",
+    slug: "prepskora",
+    title: "PREPSKORA",
+    type: "Platform",
+    visibility: "Public",
+    status: "Coming Soon",
+    summary:
+      "An AI-powered career development platform for interview practice, CV improvement, skill analysis, and career intelligence.",
     description:
-      "A curated client engagement showing Smart Hive Labs' ability to translate complex business operations into a practical software system.",
+      "PREPSKORA is being built as a modern web platform with AI-powered APIs to help individuals and organizations accelerate career development through guided insights, interview preparation, and decision support.",
     capabilities: [
-      "Product architecture",
-      "Dashboard UX",
-      "Backend workflow modelling",
-      "Role-based access design",
+      "AI workflow integration",
+      "Career intelligence interfaces",
+      "Modern web platform delivery",
+      "Interactive assessment systems",
     ],
-    tags: ["B2B", "Operations", "Dashboard", "Private Client"],
+    tags: ["CareerTech", "AI", "Next.js", "Web Platform"],
     metrics: [
-      { label: "Audience", value: "Internal business teams" },
-      { label: "Visibility", value: "Curated public summary only" },
+      { label: "Status", value: "Coming soon" },
+      { label: "Purpose", value: "Career acceleration through AI guidance" },
     ],
-    confidentialityNote:
-      "Detailed implementation and client identity are intentionally withheld.",
+  },
+  {
+    slug: "votyhive",
+    title: "VotyHive",
+    type: "Platform",
+    visibility: "Public",
+    status: "Coming Soon",
+    summary:
+      "A multi-workspace voting platform where organizations run their own branded voting systems with optional paid or free voting.",
+    description:
+      "VotyHive is being designed as a workspace-driven voting platform where each organization controls its own voting environment, settings, workflows, and subdomain presence for both paid and non-paid voting experiences.",
+    capabilities: [
+      "Multi-tenant platform design",
+      "Workspace architecture",
+      "Subdomain-based product systems",
+      "Configurable voting workflows",
+    ],
+    tags: ["Voting", "SaaS", "Multi-Workspace", "Platform"],
+    metrics: [
+      { label: "Structure", value: "Organization-owned workspaces" },
+      { label: "Modes", value: "Paid and non-paid voting flows" },
+    ],
   },
   {
     slug: "civiclink",
     title: "CivicLink",
-    type: "Prototype",
+    type: "Open Source",
     visibility: "Public",
     status: "Exploration",
-    summary: "A civic-tech prototype exploring public information access, tracking, and transparency tools.",
+    summary:
+      "An AI-powered civic technology platform for transparency, participation, accountability, and electoral insight in Ghana.",
     description:
-      "An R&D initiative used to test how public-interest digital systems can communicate complex civic information more clearly.",
+      "CivicLink is built to serve voters, candidates, and electoral bodies through voter education, data-driven civic insight, real-time electoral tracking, and stronger transparency across democratic processes.",
     capabilities: [
-      "Rapid prototyping",
-      "Interface systems",
-      "Research-led feature framing",
+      "Civic data experience design",
+      "AI-assisted information systems",
+      "Public participation tooling",
+      "Research-led product framing",
     ],
-    tags: ["Civic Tech", "Prototype", "Research"],
+    tags: ["Civic Tech", "AI", "Transparency", "Open Source"],
     links: [{ href: "https://github.com/Smart-Hive-Labs/civiclink", label: "Repository" }],
+    metrics: [
+      { label: "Focus", value: "Transparency and civic participation" },
+      { label: "Region", value: "Ghana" },
+    ],
   },
   {
-    slug: "learning-game-lab",
-    title: "Learning Game Lab",
-    type: "Prototype",
-    visibility: "Curated",
+    slug: "unilinkspace",
+    title: "UniLinkSpace",
+    type: "Platform",
+    visibility: "Public",
     status: "Active Build",
-    summary: "A game development track focused on interactive learning experiences and playable educational systems.",
+    summary:
+      "A smart QR platform that turns one QR code into an editable digital experience with analytics, redirects, branding, and conversion tools.",
     description:
-      "A studio exploration track for combining game mechanics, learning systems, and visual storytelling into product-ready concepts.",
+      "UniLinkSpace allows users to create purpose-driven QR experiences that lead to contact cards, link hubs, portfolios, business pages, files, ticket pages, payment flows, or custom mini-sites, all with trackable performance and adaptable destination logic.",
     capabilities: [
-      "Game concept design",
-      "Interactive systems",
-      "UI for gameplay loops",
-      "Rapid iteration",
+      "QR-based product design",
+      "Analytics and redirect systems",
+      "Landing page generation",
+      "Conversion-focused workflows",
     ],
-    tags: ["Game Dev", "Education", "Prototype"],
-    metrics: [{ label: "Mode", value: "Prototype sprinting" }],
+    tags: ["QR Platform", "Analytics", "Landing Pages", "Business Tools"],
+    metrics: [
+      { label: "Core model", value: "Editable QR experiences" },
+      { label: "Supports", value: "Profiles, files, payments, pages, events" },
+    ],
+  },
+  {
+    slug: "dropp-marketplace",
+    title: "Dropp Marketplace",
+    type: "Platform",
+    visibility: "Public",
+    status: "Coming Soon",
+    summary:
+      "An e-commerce marketplace that brings together storefronts from Errands4Me with instant delivery as a core experience.",
+    description:
+      "Dropp Marketplace is being developed as the commerce-facing layer that aggregates merchant storefronts connected to Errands4Me and pairs them with instant delivery for faster ordering and fulfilment.",
+    capabilities: [
+      "Marketplace architecture",
+      "Storefront aggregation",
+      "Commerce product systems",
+      "Delivery-linked checkout experiences",
+    ],
+    tags: ["E-commerce", "Marketplace", "Delivery", "Coming Soon"],
+    metrics: [
+      { label: "Source", value: "Storefronts from Errands4Me" },
+      { label: "Promise", value: "Instant delivery" },
+    ],
   },
 ];
 

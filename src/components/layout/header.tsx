@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
@@ -24,8 +25,15 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[color:var(--surface)]/80 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="Smart Hive Labs home">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(7,10,18,0.35)]">
-            SH
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/20 bg-white p-1.5 shadow-[0_18px_40px_rgba(7,10,18,0.35)]">
+            <Image
+              src="/smarthivelogo_fav.png"
+              alt="Smart Hive Labs logo"
+              width={28}
+              height={28}
+              className="h-7 w-7 rounded-xl object-contain"
+              priority
+            />
           </div>
           <div>
             <p className="text-sm font-semibold tracking-[0.16em] text-white/60">

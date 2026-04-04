@@ -31,11 +31,15 @@
 }
 
 html {
+  min-height: 100%;
+  background-color: #07111f;
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #07111f;
   background:
     radial-gradient(circle at top, rgba(92, 120, 255, 0.14), transparent 24%),
     radial-gradient(circle at 80% 10%, rgba(129, 205, 255, 0.12), transparent 22%),

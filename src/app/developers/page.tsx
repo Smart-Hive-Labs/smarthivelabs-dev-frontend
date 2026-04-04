@@ -22,7 +22,13 @@ export default function DevelopersPage() {
         {developerProfiles.map((developer) => (
           <article key={developer.name} className="surface-panel overflow-hidden rounded-[2rem]">
             <div className="relative h-72">
-              <Image src={developer.image} alt={developer.name} fill className="object-cover" />
+              <Image
+                src={developer.image}
+                alt={developer.name}
+                fill
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                className="object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[#08101d] via-[#08101d]/20 to-transparent" />
             </div>
             <div className="p-7">
