@@ -2,12 +2,16 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { SectionHeading } from "@/components/studio/section-heading";
 import { developerProfiles, studioPrinciples } from "@/data/siteContent";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Developers",
   description:
     "Meet the developers and engineering disciplines behind Smart Hive Labs.",
-};
+  path: "/developers",
+  image: "/developers.png",
+  imageAlt: "Smart Hive Labs developers page",
+});
 
 export default function DevelopersPage() {
   return (

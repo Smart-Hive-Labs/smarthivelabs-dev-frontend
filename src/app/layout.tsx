@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     siteName: "Smart Hive Labs",
     images: [
       {
-        url: "/shl_logo.webp",
+        url: "/homepage.png",
         width: 1200,
         height: 630,
-        alt: "Smart Hive Labs",
+        alt: "Smart Hive Labs homepage",
       },
     ],
     locale: "en_US",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Smart Hive Labs | Software and Game Development",
     description:
       "Software and game development partner for product builds, AI-enabled systems, and curated project work.",
-    images: ["/shl_logo.webp"],
+    images: ["/homepage.png"],
   },
 };
 

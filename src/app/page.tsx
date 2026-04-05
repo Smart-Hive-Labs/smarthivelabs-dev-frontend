@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Github, Layers3, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/studio/section-heading";
+import { createPageMetadata } from "@/lib/metadata";
 import {
   buildProcess,
   caseStudies,
@@ -11,6 +12,15 @@ import {
   studioPrinciples,
   studioStats,
 } from "@/data/siteContent";
+
+export const metadata = createPageMetadata({
+  title: "Smart Hive Labs | Software and Game Development",
+  description:
+    "Smart Hive Labs builds software products, web and mobile apps, AI-enabled systems, and game development projects for businesses and partners.",
+  path: "/",
+  image: "/homepage.png",
+  imageAlt: "Smart Hive Labs homepage",
+});
 
 const featuredProjects = caseStudies.slice(0, 3);
 const featuredServices = serviceOffers.slice(0, 4);

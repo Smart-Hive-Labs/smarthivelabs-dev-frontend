@@ -4,12 +4,16 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { GithubOrganizationPanel } from "@/components/studio/github-organization-panel";
 import { SectionHeading } from "@/components/studio/section-heading";
 import { openSourceEntries } from "@/data/siteContent";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Open Source",
   description:
     "Explore open-source work and public repositories from Smart Hive Labs.",
-};
+  path: "/open-source",
+  image: "/open-source.png",
+  imageAlt: "Smart Hive Labs open source page",
+});
 
 export default function OpenSourcePage() {
   return (

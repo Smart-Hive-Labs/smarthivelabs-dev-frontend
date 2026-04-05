@@ -3,12 +3,16 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/studio/section-heading";
 import { caseStudies } from "@/data/siteContent";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Work",
   description:
     "Curated case studies, internal products, and prototype work from Smart Hive Labs.",
-};
+  path: "/work",
+  image: "/work.png",
+  imageAlt: "Smart Hive Labs work page",
+});
 
 export default function WorkPage() {
   return (
