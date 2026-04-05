@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     "Product Engineering",
     "Software Engineering Partner",
   ],
-  authors: [{ name: "Smart Hive Labs", url: "https://smarthivelabs.dev" }],
+  authors: [{ name: "Smart Hive Labs", url: "https://www.smarthivelabs.dev" }],
   creator: "Smart Hive Labs",
   publisher: "Smart Hive Labs",
-  metadataBase: new URL("https://smarthivelabs.dev"),
+  metadataBase: new URL("https://www.smarthivelabs.dev"),
   alternates: {
     canonical: "/",
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Smart Hive Labs | Software and Game Development",
     description:
       "Software, AI, mobile, web, and game development services from Smart Hive Labs.",
-    url: "https://smarthivelabs.dev",
+    url: "https://www.smarthivelabs.dev",
     siteName: "Smart Hive Labs",
     images: [
       {
