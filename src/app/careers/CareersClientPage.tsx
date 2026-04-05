@@ -135,16 +135,20 @@ export default function CareersClientPage() {
               <span className="rounded-full border border-white/8 px-3 py-1 text-xs text-white/58">
                 {role.status}
               </span>
-              {role.applyUrl ? (
+              {role.status === "Open" && role.applyUrl ? (
                 <Button asChild className="rounded-full bg-white px-5 text-[#0b1020] hover:bg-white/90">
                   <Link href="#apply">
                     Apply
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
+              ) : role.status === "Closed" ? (
+                <p className="max-w-[14rem] text-right text-sm text-white/52">
+                  This role is currently unavailable. You can still submit a general application.
+                </p>
               ) : (
                 <p className="max-w-[12rem] text-right text-sm text-white/52">
-                  Pipeline role. Submit a general application below.
+                  Pipeline role. Submit a general application to join the future shortlist.
                 </p>
               )}
             </div>

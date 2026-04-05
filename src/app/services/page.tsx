@@ -29,7 +29,7 @@ export default function ServicesPage() {
     <div className="section-wrap py-20 md:py-24">
       <SectionHeading
         eyebrow="Services"
-        title="Software and game development services structured around real delivery."
+        title="Software and Web development services structured around real delivery."
         description="From product engineering to AI systems and game development, Smart Hive Labs delivers technical work with clear commercial intent."
       />
 
