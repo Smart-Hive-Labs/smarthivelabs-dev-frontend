@@ -4,12 +4,16 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/studio/section-heading";
 import { serviceOffers } from "@/data/siteContent";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Services",
   description:
     "Software development, AI-enabled systems, web and mobile application delivery, and game development services from Smart Hive Labs.",
-};
+  path: "/services",
+  image: "/services.png",
+  imageAlt: "Smart Hive Labs services page",
+});
 
 const serviceCategories = [
   "Product Engineering",
