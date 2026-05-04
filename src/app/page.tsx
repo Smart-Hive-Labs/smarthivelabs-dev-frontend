@@ -32,7 +32,7 @@ export default function HomePage() {
         <div className="section-wrap relative py-20 md:py-28">
           <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div className="max-w-4xl space-y-8">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/62">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border-amber)] bg-[var(--amber-muted)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--amber)]">
                 <Sparkles className="h-3.5 w-3.5" />
                 Software, AI and Game Development
               </div>
@@ -45,7 +45,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button asChild size="lg" className="rounded-full bg-white px-7 text-[#0b1020] hover:bg-white/90">
+                <Button asChild size="lg" className="rounded-full px-7">
                   <Link href="/quote">
                     Get Quote
                     <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -88,7 +88,7 @@ export default function HomePage() {
             {studioStats.map((stat) => (
               <div key={stat.label} className="surface-panel rounded-[1.75rem] px-6 py-6">
                 <p className="text-sm text-white/42">{stat.label}</p>
-                <p className="mt-3 text-xl font-medium tracking-[-0.03em] text-white">
+                <p className="mt-3 text-xl font-medium tracking-[-0.03em] text-[var(--amber)]">
                   {stat.value}
                 </p>
               </div>
@@ -106,7 +106,7 @@ export default function HomePage() {
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
           {featuredServices.map((service) => (
             <div key={service.title} className="surface-panel rounded-[1.75rem] p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/40">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--amber)]">
                 {service.category}
               </p>
               <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-white">
@@ -140,7 +140,7 @@ export default function HomePage() {
           {featuredProjects.map((project) => (
             <div key={project.slug} className="surface-panel rounded-[1.75rem] p-7">
               <div className="flex items-center justify-between gap-4">
-                <span className="rounded-full border border-white/8 px-3 py-1 text-xs text-white/58">
+                <span className="rounded-full border border-[var(--border-amber)] bg-[var(--amber-muted)] px-3 py-1 text-xs text-[var(--amber)]">
                   {project.type}
                 </span>
                 <span className="text-xs text-white/42">{project.status}</span>
@@ -183,7 +183,7 @@ export default function HomePage() {
             {buildProcess.map((phase) => (
               <div key={phase.step} className="surface-panel rounded-[1.6rem] px-6 py-5">
                 <div className="flex items-start gap-5">
-                  <p className="text-sm font-semibold tracking-[0.22em] text-white/40">
+                  <p className="text-sm font-semibold tracking-[0.22em] text-[var(--amber)]">
                     {phase.step}
                   </p>
                   <div>
@@ -211,7 +211,7 @@ export default function HomePage() {
                   key={developer.name}
                   className="rounded-[1.5rem] border border-white/8 bg-white/[0.03] p-5"
                 >
-                  <p className="text-xs uppercase tracking-[0.24em] text-white/42">
+                  <p className="text-xs uppercase tracking-[0.24em] text-[var(--amber)]">
                     {developer.role}
                   </p>
                   <h3 className="mt-3 text-xl font-medium text-white">{developer.name}</h3>
@@ -230,7 +230,7 @@ export default function HomePage() {
             <div className="mt-10 grid gap-4">
               {openSourceEntries.map((entry) => (
                 <div key={entry.title} className="rounded-[1.5rem] border border-white/8 bg-white/[0.03] p-5">
-                  <div className="flex items-center gap-3 text-white/40">
+                  <div className="flex items-center gap-3 text-[var(--amber)]">
                     <Github className="h-4 w-4" />
                     <p className="text-xs uppercase tracking-[0.24em]">{entry.focus}</p>
                   </div>
@@ -261,7 +261,7 @@ export default function HomePage() {
               <Button asChild variant="outline" className="rounded-full border-white/12 bg-white/4 px-6 text-white hover:bg-white/8 hover:text-white">
                 <Link href="/contact">General Contact</Link>
               </Button>
-              <Button asChild className="rounded-full bg-white px-6 text-[#0b1020] hover:bg-white/90">
+              <Button asChild className="rounded-full px-6">
                 <Link href="/quote">
                   Get Quote
                   <Layers3 className="ml-2 h-4 w-4" />

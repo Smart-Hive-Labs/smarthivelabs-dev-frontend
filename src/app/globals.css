@@ -1,29 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --background: #07111f;
-  --foreground: #f4f7fb;
-  --surface: #0b1020;
+  --background:     #07111f;
+  --foreground:     #f4f7fb;
+  --surface:        #0b1020;
   --surface-elevated: #10172b;
-  --surface-soft: rgba(255, 255, 255, 0.05);
-  --card: #0f1729;
+  --surface-soft:   rgba(255, 255, 255, 0.05);
+  --card:           #0f1729;
   --card-foreground: #f4f7fb;
-  --popover: #10172b;
+  --popover:        #10172b;
   --popover-foreground: #f4f7fb;
-  --primary: #eef2ff;
-  --primary-foreground: #0b1020;
-  --secondary: #11192d;
+  --primary:        #f5a623;
+  --primary-foreground: #0a0e1a;
+  --secondary:      #11192d;
   --secondary-foreground: #cfd7e8;
-  --muted: #0d1526;
+  --muted:          #0d1526;
   --muted-foreground: #98a5bd;
-  --accent: #182133;
+  --accent:         #182133;
   --accent-foreground: #f4f7fb;
-  --destructive: #ff6b6b;
+  --destructive:    #ff6b6b;
   --destructive-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.08);
-  --ring: rgba(255, 255, 255, 0.2);
-  --radius: 1.25rem;
+  --border:         rgba(255, 255, 255, 0.08);
+  --border-strong:  rgba(255, 255, 255, 0.14);
+  --input:          rgba(255, 255, 255, 0.08);
+  --ring:           rgba(245, 166, 35, 0.50);
+  --radius:         1.25rem;
+
+  /* Brand amber tokens — shared with smarthivelabs.com */
+  --amber:           #f5a623;
+  --amber-light:     #f7b84b;
+  --amber-dim:       #c8811a;
+  --amber-muted:     rgba(245, 166, 35, 0.12);
+  --amber-glow:      rgba(245, 166, 35, 0.20);
+  --amber-foreground: #0a0e1a;
+  --border-amber:    rgba(245, 166, 35, 0.28);
+
+  --shadow-glow-amber: 0 0 50px rgba(245, 166, 35, 0.16);
 }
 
 * {
@@ -41,8 +53,9 @@ body {
   overflow-x: hidden;
   background-color: #07111f;
   background:
-    radial-gradient(circle at top, rgba(92, 120, 255, 0.14), transparent 24%),
-    radial-gradient(circle at 80% 10%, rgba(129, 205, 255, 0.12), transparent 22%),
+    radial-gradient(ellipse at 18% 0%, rgba(245, 166, 35, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 80% 8%, rgba(92, 120, 255, 0.13), transparent 28%),
+    radial-gradient(circle at 95% 15%, rgba(129, 205, 255, 0.08), transparent 22%),
     linear-gradient(180deg, #09111f 0%, #07111f 100%);
   color: var(--foreground);
   font-family:
@@ -67,18 +80,24 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--ring);
+  outline: 2px solid var(--amber);
   outline-offset: 2px;
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(245, 166, 35, 0.22);
 }
 
 .surface-panel {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.055) 0%, rgba(255, 255, 255, 0.025) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow: 0 22px 80px rgba(2, 6, 23, 0.28);
+}
+
+.surface-panel-amber {
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.09) 0%, rgba(245, 166, 35, 0.04) 100%);
+  border: 1px solid rgba(245, 166, 35, 0.22);
+  box-shadow: 0 22px 80px rgba(2, 6, 23, 0.28), var(--shadow-glow-amber);
 }
 
 .section-wrap {
@@ -98,27 +117,29 @@ button {
 
 .hero-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 72px 72px;
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 .text-gradient {
-  background: linear-gradient(180deg, #ffffff 0%, #b6c2d9 100%);
+  background: linear-gradient(160deg, #ffffff 0%, #b6c2d9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+.text-gradient-amber {
+  background: linear-gradient(135deg, #f7b84b 0%, #f5a623 55%, #c8811a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-::-webkit-scrollbar-track {
-  background: #09111f;
-}
-
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #09111f; }
 ::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.14);
 }
+::-webkit-scrollbar-thumb:hover { background: rgba(245, 166, 35, 0.40); }

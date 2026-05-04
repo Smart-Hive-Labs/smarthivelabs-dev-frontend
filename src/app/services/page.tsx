@@ -41,7 +41,7 @@ export default function ServicesPage() {
             <section key={category} className="grid gap-6">
               <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/42">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--amber)]">
                     {category}
                   </p>
                 </div>
@@ -61,7 +61,7 @@ export default function ServicesPage() {
 
                     <div className="mt-8 grid gap-5 md:grid-cols-2">
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/42">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--amber)]">
                           Deliverables
                         </p>
                         <div className="mt-3 grid gap-2">
@@ -73,7 +73,7 @@ export default function ServicesPage() {
                         </div>
                       </div>
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/42">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--amber)]">
                           Technologies
                         </p>
                         <div className="mt-3 flex flex-wrap gap-2">
@@ -97,7 +97,7 @@ export default function ServicesPage() {
       </div>
 
       <div className="mt-16 flex">
-        <Button asChild className="rounded-full bg-white px-6 text-[#0b1020] hover:bg-white/90">
+        <Button asChild className="rounded-full px-6">
           <Link href="/quote">
             Discuss a build
             <ArrowRight className="ml-2 h-4 w-4" />

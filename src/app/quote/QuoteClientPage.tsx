@@ -83,7 +83,7 @@ export default function QuoteClientPage() {
     <div className="section-wrap py-20 md:py-24">
       <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
         <div className="surface-panel rounded-[2rem] p-8 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/42">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--amber)]">
             Quote
           </p>
           <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
@@ -99,7 +99,8 @@ export default function QuoteClientPage() {
               "Web, mobile, AI-enabled systems, and game development",
               "Business-first scoping instead of generic enquiry intake",
             ].map((item) => (
-              <div key={item} className="rounded-[1.4rem] border border-white/8 bg-white/[0.03] px-5 py-5 text-sm text-white/64">
+              <div key={item} className="flex items-start gap-3 rounded-[1.4rem] border border-[var(--border-amber)] bg-[var(--amber-muted)] px-5 py-5 text-sm text-white/80">
+                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--amber)]" />
                 {item}
               </div>
             ))}
@@ -228,7 +229,7 @@ export default function QuoteClientPage() {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               {status ? <p className="text-sm text-white/60">{status}</p> : <div />}
-              <Button className="rounded-full bg-white px-6 text-[#0b1020] hover:bg-white/90">
+              <Button className="rounded-full px-6">
                 Send Quote Request
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </Button>

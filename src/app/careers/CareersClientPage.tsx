@@ -77,7 +77,7 @@ export default function CareersClientPage() {
       <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {careerTracks.map((track) => (
           <article key={track.title} className="surface-panel rounded-[1.75rem] p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/42">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--amber)]">
               {track.audience}
             </p>
             <h2 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-white">
@@ -105,7 +105,7 @@ export default function CareersClientPage() {
             className="surface-panel grid gap-6 rounded-[2rem] p-8 lg:grid-cols-[0.8fr_1.2fr_auto]"
           >
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/42">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--amber)]">
                 {role.team}
               </p>
               <h2 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-white">
@@ -132,11 +132,13 @@ export default function CareersClientPage() {
               </div>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">
-              <span className="rounded-full border border-white/8 px-3 py-1 text-xs text-white/58">
+              <span className={role.status === "Open"
+                ? "rounded-full border border-[var(--border-amber)] bg-[var(--amber-muted)] px-3 py-1 text-xs text-[var(--amber)]"
+                : "rounded-full border border-white/8 px-3 py-1 text-xs text-white/58"}>
                 {role.status}
               </span>
               {role.status === "Open" && role.applyUrl ? (
-                <Button asChild className="rounded-full bg-white px-5 text-[#0b1020] hover:bg-white/90">
+                <Button asChild className="rounded-full px-5">
                   <Link href="#apply">
                     Apply
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -243,7 +245,7 @@ export default function CareersClientPage() {
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             {status ? <p className="text-sm text-white/60">{status}</p> : <div />}
-            <Button className="rounded-full bg-white px-6 text-[#0b1020] hover:bg-white/90">
+            <Button className="rounded-full px-6">
               Submit Application
               <Send className="ml-2 h-4 w-4" />
             </Button>

@@ -36,7 +36,7 @@ export default function DevelopersPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#08101d] via-[#08101d]/20 to-transparent" />
             </div>
             <div className="p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/42">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--amber)]">
                 {developer.role}
               </p>
               <h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">

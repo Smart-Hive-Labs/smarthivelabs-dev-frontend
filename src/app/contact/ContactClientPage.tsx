@@ -48,7 +48,7 @@ export default function ContactClientPage() {
     <div className="section-wrap py-20 md:py-24">
       <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="surface-panel rounded-[2rem] p-8 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/42">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--amber)]">
             Contact
           </p>
           <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
@@ -61,13 +61,13 @@ export default function ContactClientPage() {
           <div className="mt-10 grid gap-4">
             <div className="rounded-[1.4rem] border border-white/8 bg-white/[0.03] p-5">
               <div className="flex items-center gap-3 text-white">
-                <Mail className="h-4 w-4 text-white/54" />
+                <Mail className="h-4 w-4 text-[var(--amber)]" />
                 <p className="text-sm">support@smarthivelabs.dev</p>
               </div>
             </div>
             <div className="rounded-[1.4rem] border border-white/8 bg-white/[0.03] p-5">
               <div className="flex items-center gap-3 text-white">
-                <MessageSquare className="h-4 w-4 text-white/54" />
+                <MessageSquare className="h-4 w-4 text-[var(--amber)]" />
                 <p className="text-sm">For build requests, use the dedicated quote page.</p>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function ContactClientPage() {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               {status ? <p className="text-sm text-white/60">{status}</p> : <div />}
-              <Button className="rounded-full bg-white px-6 text-[#0b1020] hover:bg-white/90">
+              <Button className="rounded-full px-6">
                 Send Message
                 <Send className="ml-2 h-4 w-4" />
               </Button>

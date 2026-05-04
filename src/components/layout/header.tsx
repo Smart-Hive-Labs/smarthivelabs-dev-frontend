@@ -72,7 +72,8 @@ export default function Header() {
           </Button>
           <Button
             asChild
-            className="rounded-full border border-white/10 bg-white text-[#0b1020] hover:bg-white/90"
+            className="rounded-full border-0 hover:opacity-85"
+            style={{ background: "var(--amber)", color: "var(--amber-foreground)" }}
           >
             <Link href="/quote">
               Get Quote
@@ -119,7 +120,8 @@ export default function Header() {
               </Button>
               <Button
                 asChild
-                className="justify-start rounded-2xl border border-white/10 bg-white text-[#0b1020] hover:bg-white/90"
+                className="justify-start rounded-2xl border-0 hover:opacity-85"
+                style={{ background: "var(--amber)", color: "var(--amber-foreground)" }}
               >
                 <Link href="/quote" onClick={() => setIsOpen(false)}>
                   Get Quote

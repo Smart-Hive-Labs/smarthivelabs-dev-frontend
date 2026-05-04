@@ -31,7 +31,7 @@ export default function WorkPage() {
           >
             <div className="space-y-5">
               <div className="flex flex-wrap gap-2">
-                <span className="rounded-full border border-white/8 px-3 py-1 text-xs text-white/58">
+                <span className="rounded-full border border-[var(--border-amber)] bg-[var(--amber-muted)] px-3 py-1 text-xs text-[var(--amber)]">
                   {project.type}
                 </span>
                 <span className="rounded-full border border-white/8 px-3 py-1 text-xs text-white/58">
@@ -49,7 +49,7 @@ export default function WorkPage() {
                 <div className="grid gap-3 sm:grid-cols-2">
                   {project.metrics.map((metric) => (
                     <div key={metric.label} className="rounded-[1.25rem] border border-white/8 bg-white/[0.03] px-4 py-4">
-                      <p className="text-xs uppercase tracking-[0.2em] text-white/40">
+                      <p className="text-xs uppercase tracking-[0.2em] text-[var(--amber)]">
                         {metric.label}
                       </p>
                       <p className="mt-2 text-sm text-white/70">{metric.value}</p>
@@ -62,7 +62,7 @@ export default function WorkPage() {
             <div className="space-y-6">
               <p className="text-sm leading-7 text-white/60">{project.description}</p>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/42">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--amber)]">
                   Capabilities
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -77,7 +77,7 @@ export default function WorkPage() {
                 </div>
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/42">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--amber)]">
                   Tags
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -104,7 +104,7 @@ export default function WorkPage() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white transition-colors hover:bg-white/6"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white transition-colors hover:border-[var(--border-amber)] hover:bg-[var(--amber-muted)] hover:text-[var(--amber)]"
                     >
                       {link.label}
                       <ArrowUpRight className="h-4 w-4" />

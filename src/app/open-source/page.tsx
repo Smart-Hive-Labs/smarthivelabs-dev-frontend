@@ -26,7 +26,7 @@ export default function OpenSourcePage() {
       <div className="mt-14 grid gap-5 lg:grid-cols-2">
         {openSourceEntries.map((entry) => (
           <article key={entry.title} className="surface-panel rounded-[2rem] p-8">
-            <div className="flex items-center gap-3 text-white/40">
+            <div className="flex items-center gap-3 text-[var(--amber)]">
               <Github className="h-4 w-4" />
               <p className="text-xs font-semibold uppercase tracking-[0.2em]">{entry.focus}</p>
             </div>
@@ -46,7 +46,7 @@ export default function OpenSourcePage() {
                 href={entry.repository}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white transition-colors hover:bg-white/6"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white transition-colors hover:border-[var(--border-amber)] hover:bg-[var(--amber-muted)] hover:text-[var(--amber)]"
               >
                 Repository
                 <ArrowUpRight className="h-4 w-4" />
@@ -56,7 +56,7 @@ export default function OpenSourcePage() {
                   href={entry.issuesUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white transition-colors hover:bg-white/6"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white transition-colors hover:border-[var(--border-amber)] hover:bg-[var(--amber-muted)] hover:text-[var(--amber)]"
                 >
                   Issues
                   <ArrowUpRight className="h-4 w-4" />
