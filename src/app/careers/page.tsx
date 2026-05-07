@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CareersClientPage from "./CareersClientPage";
 import { createPageMetadata } from "@/lib/metadata";
+import { getCareerTracks, getVacancies } from "@/lib/cms";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Careers",
@@ -11,6 +12,11 @@ export const metadata: Metadata = createPageMetadata({
   imageAlt: "Smart Hive Labs careers page",
 });
 
-export default function CareersPage() {
-  return <CareersClientPage />;
+export default async function CareersPage() {
+  const [careerTracks, vacancies] = await Promise.all([
+    getCareerTracks(),
+    getVacancies(),
+  ]);
+
+  return <CareersClientPage careerTracks={careerTracks} vacancies={vacancies} />;
 }

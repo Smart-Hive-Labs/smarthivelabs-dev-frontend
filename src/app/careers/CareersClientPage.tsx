@@ -14,13 +14,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { SectionHeading } from "@/components/studio/section-heading";
+import { EmptyState } from "@/components/ui/empty-state";
 import {
   careerApplicationRoles,
-  careerTracks,
-  vacancies,
+  type CareerTrack,
+  type Vacancy,
 } from "@/data/siteContent";
 
-export default function CareersClientPage() {
+interface CareersClientPageProps {
+  careerTracks: CareerTrack[];
+  vacancies: Vacancy[];
+}
+
+export default function CareersClientPage({ careerTracks, vacancies }: CareersClientPageProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -75,7 +81,9 @@ export default function CareersClientPage() {
       />
 
       <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        {careerTracks.map((track) => (
+        {careerTracks.length === 0 ? (
+          <EmptyState title="No tracks yet" message="Career paths will be listed here soon." />
+        ) : careerTracks.map((track) => (
           <article key={track.title} className="surface-panel rounded-[1.75rem] p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--amber)]">
               {track.audience}
@@ -99,7 +107,9 @@ export default function CareersClientPage() {
       </div>
 
       <div className="mt-16 grid gap-5">
-        {vacancies.map((role) => (
+        {vacancies.length === 0 ? (
+          <EmptyState title="No open roles" message="Check back soon or submit a general application below." />
+        ) : vacancies.map((role) => (
           <article
             key={role.title}
             className="surface-panel grid gap-6 rounded-[2rem] p-8 lg:grid-cols-[0.8fr_1.2fr_auto]"

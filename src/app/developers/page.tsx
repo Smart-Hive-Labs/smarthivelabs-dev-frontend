@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { SectionHeading } from "@/components/studio/section-heading";
-import { developerProfiles, studioPrinciples } from "@/data/siteContent";
+import { EmptyState } from "@/components/ui/empty-state";
+import { studioPrinciples } from "@/data/siteContent";
 import { createPageMetadata } from "@/lib/metadata";
+import { getDeveloperTeam } from "@/lib/cms";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Developers",
@@ -13,7 +15,9 @@ export const metadata: Metadata = createPageMetadata({
   imageAlt: "Smart Hive Labs developers page",
 });
 
-export default function DevelopersPage() {
+export default async function DevelopersPage() {
+  const developerProfiles = await getDeveloperTeam();
+
   return (
     <div className="section-wrap py-20 md:py-24">
       <SectionHeading
@@ -23,7 +27,9 @@ export default function DevelopersPage() {
       />
 
       <div className="mt-14 grid gap-5 lg:grid-cols-3">
-        {developerProfiles.map((developer) => (
+        {developerProfiles.length === 0 ? (
+          <EmptyState title="No team members yet" message="The engineering team will be introduced here soon." />
+        ) : developerProfiles.map((developer) => (
           <article key={developer.name} className="surface-panel overflow-hidden rounded-[2rem]">
             <div className="relative h-72">
               <Image

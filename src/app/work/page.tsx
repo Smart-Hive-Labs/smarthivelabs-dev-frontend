@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/studio/section-heading";
-import { caseStudies } from "@/data/siteContent";
+import { EmptyState } from "@/components/ui/empty-state";
 import { createPageMetadata } from "@/lib/metadata";
+import { getProjects } from "@/lib/cms";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Work",
@@ -14,7 +15,9 @@ export const metadata: Metadata = createPageMetadata({
   imageAlt: "Smart Hive Labs work page",
 });
 
-export default function WorkPage() {
+export default async function WorkPage() {
+  const caseStudies = await getProjects();
+
   return (
     <div className="section-wrap py-20 md:py-24">
       <SectionHeading
@@ -24,7 +27,9 @@ export default function WorkPage() {
       />
 
       <div className="mt-14 grid gap-5">
-        {caseStudies.map((project) => (
+        {caseStudies.length === 0 ? (
+          <EmptyState title="No projects yet" message="Our portfolio is growing. Check back soon." />
+        ) : caseStudies.map((project) => (
           <article
             key={project.slug}
             className="surface-panel grid gap-8 rounded-[2rem] p-8 lg:grid-cols-[0.8fr_1.2fr]"

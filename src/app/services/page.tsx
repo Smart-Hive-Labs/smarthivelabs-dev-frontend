@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/studio/section-heading";
-import { serviceOffers } from "@/data/siteContent";
 import { createPageMetadata } from "@/lib/metadata";
+import { getServiceOffers } from "@/lib/cms";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Services",
@@ -24,7 +24,9 @@ const serviceCategories = [
   "Advisory",
 ] as const;
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const serviceOffers = await getServiceOffers();
+
   return (
     <div className="section-wrap py-20 md:py-24">
       <SectionHeading

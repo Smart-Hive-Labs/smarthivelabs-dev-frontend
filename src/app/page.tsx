@@ -3,15 +3,13 @@ import { ArrowRight, ArrowUpRight, Github, Layers3, Sparkles } from "lucide-reac
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/studio/section-heading";
 import { createPageMetadata } from "@/lib/metadata";
+import { buildProcess, studioPrinciples, studioStats } from "@/data/siteContent";
 import {
-  buildProcess,
-  caseStudies,
-  developerProfiles,
-  openSourceEntries,
-  serviceOffers,
-  studioPrinciples,
-  studioStats,
-} from "@/data/siteContent";
+  getDeveloperTeam,
+  getOpenSource,
+  getProjects,
+  getServiceOffers,
+} from "@/lib/cms";
 
 export const metadata = createPageMetadata({
   title: "Smart Hive Labs | Software and Game Development",
@@ -22,10 +20,16 @@ export const metadata = createPageMetadata({
   imageAlt: "Smart Hive Labs homepage",
 });
 
-const featuredProjects = caseStudies.slice(0, 3);
-const featuredServices = serviceOffers.slice(0, 4);
+export default async function HomePage() {
+  const [allServices, allProjects, developerProfiles, openSourceEntries] = await Promise.all([
+    getServiceOffers(),
+    getProjects(),
+    getDeveloperTeam(),
+    getOpenSource(),
+  ]);
 
-export default function HomePage() {
+  const featuredProjects = allProjects.slice(0, 3);
+  const featuredServices = allServices.slice(0, 4);
   return (
     <div className="pb-24">
       <section className="hero-grid relative overflow-hidden border-b border-white/8">

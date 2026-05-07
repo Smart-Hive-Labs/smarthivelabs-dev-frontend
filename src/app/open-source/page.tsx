@@ -3,8 +3,9 @@ import Link from "next/link";
 import { ArrowUpRight, Github } from "lucide-react";
 import { GithubOrganizationPanel } from "@/components/studio/github-organization-panel";
 import { SectionHeading } from "@/components/studio/section-heading";
-import { openSourceEntries } from "@/data/siteContent";
+import { EmptyState } from "@/components/ui/empty-state";
 import { createPageMetadata } from "@/lib/metadata";
+import { getOpenSource } from "@/lib/cms";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Open Source",
@@ -15,7 +16,9 @@ export const metadata: Metadata = createPageMetadata({
   imageAlt: "Smart Hive Labs open source page",
 });
 
-export default function OpenSourcePage() {
+export default async function OpenSourcePage() {
+  const openSourceEntries = await getOpenSource();
+
   return (
     <div className="section-wrap py-20 md:py-24">
       <SectionHeading
@@ -24,7 +27,9 @@ export default function OpenSourcePage() {
         description="Selected repositories are open for contribution, while the broader GitHub organization also includes public product and research work."
       />
       <div className="mt-14 grid gap-5 lg:grid-cols-2">
-        {openSourceEntries.map((entry) => (
+        {openSourceEntries.length === 0 ? (
+          <EmptyState title="No repositories yet" message="Public work is on its way." />
+        ) : openSourceEntries.map((entry) => (
           <article key={entry.title} className="surface-panel rounded-[2rem] p-8">
             <div className="flex items-center gap-3 text-[var(--amber)]">
               <Github className="h-4 w-4" />
