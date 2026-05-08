@@ -26,7 +26,7 @@ import {
 const BASE_URL =
   process.env.NEXT_PUBLIC_CMS_API_URL ?? "http://localhost:4100";
 
-const REVALIDATE = { next: { revalidate: 60 } } as const;
+const REVALIDATE: RequestInit = { cache: 'no-store' };
 
 // ---------------------------------------------------------------------------
 // Low-level fetch wrapper
