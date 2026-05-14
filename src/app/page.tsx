@@ -178,18 +178,19 @@ export default function HomePage() {
 
           <AnimateIn delay={0.2} className="mt-14">
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="rounded-2xl border border-white/[0.07] bg-[#0b1423] p-6 flex items-end">
-                <div>
-                  <p className="text-[80px] font-black leading-none text-white tracking-[-0.05em]">Aa</p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.24em] text-[#f5a623]">SF Pro Display</p>
-                </div>
+              <div className="rounded-2xl border border-white/[0.07] bg-[#0b1423] p-6">
+                <p className="mb-4 text-xs uppercase tracking-[0.28em] text-white/30">Based in</p>
+                <p className="text-2xl font-bold tracking-[-0.03em] text-white">Ghana, West Africa</p>
+                <p className="mt-2 text-sm leading-6 text-white/45">Working with clients and partners globally, from early-stage to enterprise.</p>
               </div>
               <div className="rounded-2xl border border-white/[0.07] bg-[#0b1423] p-6">
-                <p className="mb-4 text-xs uppercase tracking-[0.28em] text-white/30">Typography & Colors</p>
-                <p className="text-sm leading-6 text-white/50 mb-5">Clean letterforms, amber depth, structured dark surfaces — built for trust and precision.</p>
-                <div className="flex gap-2">
-                  {["#07111f", "#f5a623", "#f4f7fb", "#0f1729"].map((c, i) => (
-                    <div key={c} className="h-8 w-8 rounded-lg" style={{ background: c, border: i === 0 || i === 3 ? "1px solid rgba(255,255,255,0.08)" : "none" }} />
+                <p className="mb-4 text-xs uppercase tracking-[0.28em] text-white/30">Engagement Model</p>
+                <div className="space-y-2.5">
+                  {["Project-based builds", "Ongoing retainers", "Advisory engagements", "Partnership builds"].map((item) => (
+                    <div key={item} className="flex items-center gap-2.5">
+                      <span className="h-1 w-1 shrink-0 rounded-full bg-[#f5a623]/60" />
+                      <p className="text-sm text-white/60">{item}</p>
+                    </div>
                   ))}
                 </div>
               </div>

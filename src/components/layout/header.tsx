@@ -42,6 +42,8 @@ export default function Header() {
   const pathname               = usePathname();
   const [state, setState]      = useState<NavState>("full");
   const [tooltip, setTooltip]  = useState<string | null>(null);
+  const [tabsVisible, setTabsVisible] = useState(true);
+  const lastScrollY            = useRef(0);
   const tooltipTimer           = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /* ── scroll listener ── */
@@ -49,6 +51,14 @@ export default function Header() {
     const onScroll = () => {
       const y = window.scrollY;
       setState(y < 80 ? "full" : y < 320 ? "pill" : "sidebar");
+
+      /* mobile tab bar: hide on scroll-down, show on scroll-up */
+      if (y > lastScrollY.current + 6) {
+        setTabsVisible(false);
+      } else if (y < lastScrollY.current - 6) {
+        setTabsVisible(true);
+      }
+      lastScrollY.current = y;
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -273,37 +283,51 @@ export default function Header() {
       </AnimatePresence>
 
       {/* ══════════════════════════════════════════
-          MOBILE BOTTOM TAB BAR
-          Always shown on < md screens
+          MOBILE FLOATING TAB BAR
+          Pill shape, centered, hide on scroll-down
       ══════════════════════════════════════════ */}
-      <div
-        className="fixed bottom-0 left-0 right-0 z-50 md:hidden
-                   border-t border-white/10 bg-[#0b1020]/95 backdrop-blur-xl"
-        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
-      >
-        <div className="flex">
-          {bottomTabs.map((tab) => {
-            const Icon   = tab.icon;
-            const active = pathname === tab.href;
-            return (
-              <Link
-                key={tab.href}
-                href={tab.href}
-                className={cn(
-                  "flex flex-1 flex-col items-center justify-center gap-1 py-3 transition-colors",
-                  active ? "text-[#f5a623]" : "text-white/35"
-                )}
-              >
-                <Icon className="h-5 w-5" />
-                <span className="text-[10px] font-semibold tracking-[0.03em]">{tab.label}</span>
-                {active && (
-                  <span className="absolute top-0 h-[2px] w-8 rounded-full bg-[#f5a623]" />
-                )}
-              </Link>
-            );
-          })}
-        </div>
-      </div>
+      <AnimatePresence>
+        {tabsVisible && (
+          <motion.div
+            key="mobile-tabs"
+            className="fixed bottom-5 z-50 md:hidden"
+            style={{ left: "50%", x: "-50%" }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 24, transition: { duration: 0.2 } }}
+            transition={SPRING}
+          >
+            <div
+              className="flex items-center gap-1 rounded-[2rem] border border-white/10
+                         bg-[#0b1020]/92 backdrop-blur-2xl px-2 py-2
+                         shadow-[0_8px_40px_rgba(0,0,0,0.55)]"
+            >
+              {bottomTabs.map((tab) => {
+                const Icon   = tab.icon;
+                const active = pathname === tab.href;
+                return (
+                  <Link
+                    key={tab.href}
+                    href={tab.href}
+                    className={cn(
+                      "relative flex flex-col items-center gap-1 rounded-[1.5rem] px-3.5 py-2 transition-colors",
+                      active
+                        ? "bg-[rgba(245,166,35,0.15)] text-[#f5a623]"
+                        : "text-white/38 hover:text-white/70"
+                    )}
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className="text-[9px] font-semibold tracking-[0.04em]">{tab.label}</span>
+                    {active && (
+                      <span className="absolute -top-0.5 left-1/2 h-[2px] w-5 -translate-x-1/2 rounded-full bg-[#f5a623]" />
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
