@@ -143,3 +143,21 @@ button {
   background: rgba(255, 255, 255, 0.14);
 }
 ::-webkit-scrollbar-thumb:hover { background: rgba(245, 166, 35, 0.40); }
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
